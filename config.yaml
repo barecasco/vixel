@@ -1,0 +1,86 @@
+# ------------------------------- trim
+trim_filepath     : "./data/gx050023.mp4"
+trim_outpath      : "./data/vid_2.mp4"
+trim_start        : "100" # can be in clock format or seconds format
+trim_end          : "200" # same as above
+
+
+
+# ------------------------------- fragment
+frag_filepath     : "./data/gx050023.mp4"
+frag_fps          : 3
+frag_start_time   : "00:02:00"
+frag_end_time     : "00:02:05"
+
+
+
+# ------------------------------- scanf
+species               : "oniger"
+scanf_model_path      : "./model/oniger.pt"
+scanf_conf_thres      : 0.25
+scanf_iou_thres       : 0.7
+scanf_rescale_size    : 640
+scanf_video_path      : "./data/trimmed.mp4"
+scanf_store_images    : true
+scanf_full_scan       : true
+scanf_start_time      : "00:02:00"
+scanf_end_time        : "00:02:05"
+scanf_interval        : 30
+scanf_fps             : 60
+
+
+
+# ------------------------------- scanf-bulk
+species               : "oniger"
+bulk_model_path       : "./model/oniger.pt"
+bulk_video_dir        : "./data/videoset"
+bulk_conf_thres       : 0.25
+bulk_iou_thres        : 0.7
+bulk_rescale_size     : 640
+bulk_interval         : 30
+bulk_fps              : 60
+
+
+
+
+# ------------------------------- annotate
+annotate_dirpath  : "/Users/agra/repos/kifa/app/data/oniger/cleansed"
+
+
+
+# ------------------------------- p0-cleanse + p1-prime
+image_format          : ".png"
+labelme_directory     : "./data/lmicrodon/labelme"
+cleansed_directory    : "./data/lmicrodon/cleansed"
+primed_directory      : "./data/lmicrodon/primed"
+train_ratio           : 0.8
+val_ratio             : 0.2
+test_ratio            : 0.0
+
+
+# ------------------------------- p2-train
+project_name        : "train_log"
+model_directory     : "./models"
+image_format        : ".png"
+
+base_model  : "yolov8n.pt"
+train_imgsz : 640
+epoch       : 50
+copy_paste  : 0.5         # chance of copy-paste augmentation
+degrees     : 80          # Random rotation 
+fliplr      : 0.8         # horizontal flip
+flipud      : 0.0         # vertical flip
+hsv_h       : 0.0         # Hue variation 
+hsv_s       : 0.2         # Saturation variation
+hsv_v       : 0.3         # Value/brightness variation
+mixup       : 0.15        # chance of mixup augmentation
+mosaic      : 0.3         #  mosaic augmentation
+perspective : 0.0001
+scale       : 0.5         # Random scaling between 0.5x and 1.5x
+shear       : 0.3         # Shear intensity
+translate   : 0.1         # Random translation up by image dimensions
+
+
+    
+# ------------------------------- size measure
+target_pair_path: "./query/measure/"
