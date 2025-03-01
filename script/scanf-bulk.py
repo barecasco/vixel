@@ -243,7 +243,7 @@ def analyze_result(infer_path):
 
     # Update layout
     fig.update_layout(
-        title='Fish Count Over Time',
+        title= 'Model count over time: ' + species,
         xaxis_title='Timestamp',
         yaxis_title='Number of Fish',
         template='plotly_white',

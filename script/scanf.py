@@ -149,6 +149,7 @@ def process_inference(results):
 
 # -------------------------------------------------------------------
 def run_inference():
+    global start_frame, end_frame
     cap             = cv2.VideoCapture(infer_path)
     video_fps       = cap.get(cv2.CAP_PROP_FPS)
 
@@ -260,7 +261,7 @@ def analyze_result():
 
     # Update layout
     fig.update_layout(
-        title='Fish Count Over Time',
+        title= 'Model count over time: ' + species,
         xaxis_title='Timestamp',
         yaxis_title='Number of Fish',
         template='plotly_white',

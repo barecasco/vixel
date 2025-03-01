@@ -130,10 +130,14 @@ if __name__ == "__main__":
     start_time          = config["trim_start"]
     end_time            = config["trim_end"]
     
+    # create output directory
+    output_dir  = os.path.abspath(os.path.dirname(output_video))
+    os.makedirs(output_dir, exist_ok=True)
+    output_file = os.path.abspath(output_video)
+
     # Test FFmpeg
-    print("Testing FFmpeg method...")
     start = time.time()
-    trim_video_ffmpeg(input_video, output_video, start_time, end_time)
+    trim_video_ffmpeg(input_video, output_file, start_time, end_time)
     ffmpeg_time = time.time() - start
     print(f"FFmpeg processing time: {ffmpeg_time:.2f} seconds")
 
