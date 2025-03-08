@@ -1,0 +1,1 @@
+python script/playf.py "./data/gx050023.mp4" 00:01:30 00:02:45
