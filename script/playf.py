@@ -162,7 +162,8 @@ class VideoPlayer:
             import keyboard
             
             while self.is_playing:
-                if keyboard.is_pressed('c'):
+                if keyboard.is_pressed('g'):
+                    print("capture is attempted")
                     self.capture_frame()
                     # Small delay to prevent multiple captures
                     time.sleep(0.5)
